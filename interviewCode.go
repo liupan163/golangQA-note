@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"runtime"
 	"sync"
+	"errors"
+	"reflect"
 )
 
 func main() {
@@ -12,7 +14,10 @@ func main() {
 	//closePackage()
 	//imp2Interface()
 	//deferFunc()
-	appendSliceFunc()
+	//appendSliceFunc()
+	//panicOrderDetailTest()
+	relectEg()
+	reflectDemo()
 }
 func deferCall() {
 	defer func() { fmt.Println("打印前") }()
@@ -339,3 +344,147 @@ func iotaCheck() {
 
 // 0 1 zz zz 4
 //----------------------------------------------------------
+
+func goFuncArea() {
+
+	for i := 0; i < 10; i++ {
+		//loop:
+		println(i)
+	}
+	//goto loop
+}
+
+//goto函数作用域，goto函数不能进入函数内层代码
+
+func typeAlias() {
+	type MyInt1 int
+	type MyInt2 = int
+	var i int = 9
+	//var i1 MyInt1 = i
+	var i2 MyInt2 = i
+	//fmt.Println(i1,i2)
+	fmt.Println(i2)
+}
+
+//MyInt2为类型alias，能直接赋值
+//MyInt1为definition，不能直接赋值
+//----------------------------------------------------------
+
+var ErrDidNotWork = errors.New("did not work")
+
+func DoTheThing(reallyDoIt bool) (err error) {
+	if reallyDoIt {
+		result, err := tryTheThing()
+		if err != nil || result != "it worked" {
+			err = ErrDidNotWork
+		}
+	}
+	return err
+}
+
+func tryTheThing() (string, error) {
+	return "", ErrDidNotWork
+}
+
+func funcAreaTest() {
+	fmt.Println(DoTheThing(true))
+	fmt.Println(DoTheThing(false))
+}
+
+//nil nil
+//原因result, err := tryTheThing()  此处开始的err会遮罩函数作用域的err变量。两个err不相关
+//----------------------------------------------------------
+
+func panicOrderTest() {
+	defer func() {
+		if err := recover(); err != nil {
+			fmt.Println(err)
+		} else {
+			fmt.Println("fatal")
+		}
+	}()
+
+	defer func() {
+		panic("defer panic")
+	}()
+	panic("panic")
+}
+
+func panicOrderDetailTest() {
+	defer func() {
+		if err := recover(); err != nil {
+			fmt.Println("++++")
+			f := err.(func() string)
+			fmt.Println(err, f(), reflect.TypeOf(err).Kind().String())
+		} else {
+			fmt.Println("fatal")
+		}
+	}()
+
+	defer func() {
+		panic(func() string {
+			return "defer panic"
+		})
+	}()
+	panic("panic")
+}
+
+//recover接受panic函数
+//----------------------------------------------------------
+func relectEg() {
+	var num float64 = 1.2345
+
+	typeInfo := reflect.TypeOf(num)
+	pointer := reflect.ValueOf(&num)
+	value := reflect.ValueOf(num)
+	changeValue := pointer.Elem()
+	changeValue.SetFloat(1.000)
+	fmt.Println("type of pointer", changeValue.Type())
+	fmt.Println("typeInfo", typeInfo, ",pointer", pointer, ",value", value)
+	fmt.Println("value.Canset", value.CanSet())
+	// 可以理解为“强制转换”，但是需要注意的时候，转换的时候，如果转换的类型不完全符合，则直接panic
+	// Golang 对类型要求非常严格，类型一定要完全符合
+	// 如下两个，一个是*float64，一个是float64，如果弄混，则会panic
+	convertPointer := pointer.Interface().(*float64)
+	convertValue := value.Interface().(float64)
+
+	fmt.Println(convertPointer)
+	fmt.Println(convertValue)
+}
+
+// 点：
+// 只有指针类型的才可以.Elem()， .CanSet()和 .setFlocat()
+// realValue := value.Interface().(已知的类型)
+// typeInfo := relect.TypeOf(num)
+// valueInfo := relect.ValueOf(num)
+//
+//----------------------------------------------------------
+
+type ReflectStruct struct {
+	Id   int
+	Name string
+	Age  int
+}
+
+func (u ReflectStruct) ReflectCallFunc() {
+	fmt.Println("this is ReflectCallFunc")
+}
+func reflectDemo() {
+	reflectDemo := ReflectStruct{1, "parker", 18}
+	doReflectMethod(reflectDemo)
+}
+
+func doReflectMethod(demo ReflectStruct) {
+	getType := reflect.TypeOf(demo)
+	getValue := reflect.ValueOf(demo)
+	fmt.Println("getType=", getType, ",getValue=", getValue)
+	for i := 0; i < getType.NumField(); i++ {
+		field := getType.Field(i)
+		value := getValue.Field(i).Interface()
+		fmt.Printf("%s: %v  = %v\n", field.Name, field.Type, value)
+	}
+	for i := 0; i < getType.NumMethod(); i++ {
+		m := getType.Method(i)
+		fmt.Printf("%s: %v\n", m.Name, m.Type)
+	}
+}
