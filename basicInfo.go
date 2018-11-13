@@ -36,10 +36,10 @@ func main() {
 	/*
 		指针
 	*/
-	var age int = 10
-	var p *int = &age
+	var age1 int = 10
+	var p *int = &age1
 	*p = 100
-	fmt.Println("age=", age)
+	fmt.Println("age=", age1)
 	/*
 		并发
 	*/
