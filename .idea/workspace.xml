@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a443ad2-ec0f-4586-bea7-5b06d7c126fc" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pb/arith.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpcClient.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpcServer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basicInfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/basicInfo.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,38 +14,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="interviewCode.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/interviewCode.go">
+      <file leaf-file-name="test.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7633">
-              <caret line="455" column="45" selection-start-line="455" selection-start-column="45" selection-end-line="455" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="httpProxy.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/httpProxy.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rpcServer.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rpcServer.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rpcClient.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rpcClient.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+            <state relative-caret-position="486">
+              <caret line="40" column="3" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+              <folding>
+                <element signature="e#14#46#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,7 +38,15 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>clien</find>
+      <find>0x9F5F3CF</find>
+      <find>   </find>
+      <find> </find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace />
+      <replace />
+    </replaceStrings>
   </component>
   <component name="GOROOT" path="D:/go" />
   <component name="Git.Settings">
@@ -80,6 +61,7 @@
         <option value="$PROJECT_DIR$/arith.proto" />
         <option value="$PROJECT_DIR$/rpcServer.go" />
         <option value="$PROJECT_DIR$/rpcClient.go" />
+        <option value="$PROJECT_DIR$/test.go" />
       </list>
     </option>
   </component>
@@ -93,9 +75,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="688" />
-    <option name="y" value="5" />
-    <option name="width" value="1231" />
+    <option name="x" value="304" />
+    <option name="y" value="8" />
+    <option name="width" value="1565" />
     <option name="height" value="1013" />
   </component>
   <component name="ProjectView">
@@ -191,27 +173,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="688" y="5" width="1231" height="1013" extended-state="0" />
+    <frame x="304" y="8" width="1565" height="1013" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15713066" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12491694" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32918552" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.22768879" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3409611" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27002287" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +203,34 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/interviewCode.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7786">
+          <caret line="464" column="15" lean-forward="true" selection-start-line="464" selection-start-column="15" selection-end-line="464" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpcClient.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interviewCode.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7735">
+          <caret line="455" column="45" selection-start-line="455" selection-start-column="45" selection-end-line="455" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpcClient.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/interviewCode.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7633">
@@ -249,24 +259,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interviewCode.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7633">
-          <caret line="455" column="45" selection-start-line="455" selection-start-column="45" selection-end-line="455" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/basicInfo.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/httpProxy.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -279,15 +275,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rpcServer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="503">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/httpProxy.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rpcClient.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        <state relative-caret-position="34">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interviewCode.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="454" column="5" lean-forward="true" selection-start-line="454" selection-start-column="5" selection-end-line="454" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="40" column="3" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+          <folding>
+            <element signature="e#14#46#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
