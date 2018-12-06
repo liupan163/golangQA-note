@@ -1,4 +1,4 @@
-package _5point
+package _3struct
 
 
 //go语言中还有其他几样可以代表“指针”。其中最贴切的当属uintptr类型。该类型实际上是一个数值类型，也是go语言内置数据类型之一。
