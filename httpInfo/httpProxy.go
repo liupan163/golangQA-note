@@ -1,4 +1,4 @@
-package main
+package httpInfo
 
 import (
 	"net/http"
