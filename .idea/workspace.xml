@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a443ad2-ec0f-4586-bea7-5b06d7c126fc" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/interviewCode2.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basicInfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/basicKnowledge/basicInfo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpProxy.go" beforeDir="false" afterPath="$PROJECT_DIR$/httpInfo/httpProxy.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaceSkill.go" beforeDir="false" afterPath="$PROJECT_DIR$/interface/interfaceSkill.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interviewCode.go" beforeDir="false" afterPath="$PROJECT_DIR$/interview/interviewCode.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcClient.go" beforeDir="false" afterPath="$PROJECT_DIR$/rpc/rpcClient.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/rpc/rpcServer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15point/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/15point/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +17,17 @@
       <file leaf-file-name="interviewCode2.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/interviewCode2.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+            <state relative-caret-position="171">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/15point/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -80,7 +83,6 @@
         <option value="$PROJECT_DIR$/13struct/main.go" />
         <option value="$PROJECT_DIR$/14interface/main.go" />
         <option value="$PROJECT_DIR$/17exeRule02/main.go" />
-        <option value="$PROJECT_DIR$/15point/main.go" />
         <option value="$PROJECT_DIR$/16execRule/main.go" />
         <option value="$PROJECT_DIR$/29atomic/main.go" />
         <option value="$PROJECT_DIR$/30atomic/main.go" />
@@ -89,6 +91,7 @@
         <option value="$PROJECT_DIR$/httpInfo/httpProxy.go" />
         <option value="$PROJECT_DIR$/interview/interviewCode2.go" />
         <option value="$PROJECT_DIR$/00/main.go" />
+        <option value="$PROJECT_DIR$/15point/main.go" />
         <option value="$PROJECT_DIR$/interviewCode2.go" />
       </list>
     </option>
@@ -102,11 +105,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2008" />
-    <option name="y" value="10" />
-    <option name="width" value="1417" />
-    <option name="height" value="1023" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1987" />
+    <option name="y" value="22" />
+    <option name="width" value="1672" />
+    <option name="height" value="1005" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -123,7 +126,7 @@
             <path>
               <item name="golangQA-note" type="b2602c69:ProjectViewProjectNode" />
               <item name="golangQA-note" type="462c0819:PsiDirectoryNode" />
-              <item name="interview" type="462c0819:PsiDirectoryNode" />
+              <item name="15point" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -238,16 +241,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1987" y="22" width="1672" height="1005" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15778251" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18610422" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3293348" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3487298" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.25627044" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -268,13 +271,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/30atomic/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="38" column="19" lean-forward="true" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/30atomic/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -500,13 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/15point/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/13struct/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -602,9 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!block;n#IsNil#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -615,10 +601,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/go/src/builtin/builtin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="187" column="18" selection-start-line="187" selection-start-column="18" selection-end-line="187" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15point/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/interviewCode2.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        <state relative-caret-position="171">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
