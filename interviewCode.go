@@ -1,4 +1,4 @@
-package interview
+package main
 
 import (
 	"fmt"
@@ -16,8 +16,8 @@ func main() {
 	//deferFunc()
 	//appendSliceFunc()
 	//panicOrderDetailTest()
-	relectEg()
-	reflectDemo()
+	//relectEg()
+	//reflectDemo()
 }
 func deferCall() {
 	defer func() { fmt.Println("打印前") }()

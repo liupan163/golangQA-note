@@ -11,6 +11,23 @@ func main() {
 	//var t *int //t是个指针类型，初始化就是nil			fmt.Println("*t===", *t)报错
 	t := new(int) //此时t指向 : ***"地址"***
 	dd(t)
+
+	var aPot *string
+	/*
+		理解&aPot  指针的地址
+			*aPot  值
+			aPot   指针变量
+	*/
+	fmt.Printf("&aPot: %p %#v\n", &aPot, aPot) // 输出 &aPot: 0xc42000c030    (*string)(nil)
+	var aVar = "123"
+
+	//指针声明，必须先赋值。
+	//*aPot = "This is a Pointer" // 报错： panic: runtime error: invalid memory address or nil pointer dereference
+
+	aPot = &aVar                                           //分配内存
+	fmt.Printf("&aPot: %p %#v %#v \n", &aPot, aPot, *aPot) // 输出 &aPot: 0xc42000c030 (*string)(0xc42000e240) "123"
+	*aPot = "This is a Pointer"
+	fmt.Printf("&aPot: %p %#v %#v \n", &aPot, aPot, *aPot) // 输出 &aPot: 0xc42000c030 (*string)(0xc42000e240) "This is a Pointer"
 }
 
 func dd(t *int) {
