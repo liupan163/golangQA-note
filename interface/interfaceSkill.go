@@ -41,17 +41,17 @@ func Each(m map[interface{}]interface{}, h Handler) {
 func main1() {
 
 	/*
-	eg1:
-		value, b := interface.(Type)
-		value 是 Type 的默认实例；b 是 bool 类型，表明断言是否成立。
+		eg1:
+			value, b := interface.(Type)
+			value 是 Type 的默认实例；b 是 bool 类型，表明断言是否成立。
 	*/
 	s := Student{Grade: 1, Major: "English"}
 	v, b := interface{}(s).(Student)
 	fmt.Println("v=", v, ",b=", b)
 
 	/*
-	eg2:
-		i.(type)只能用在switch语句中
+		eg2:
+			i.(type)只能用在switch语句中
 	*/
 	v1, err := testParse(1)
 	fmt.Println("v1=", v1, ",err=", err)
@@ -81,4 +81,18 @@ type Car struct {
 type Student struct {
 	Grade int
 	Major string
+}
+
+//-------------method1
+type ReaderFunc1 func(p []byte) (n int, err error)
+
+func (f ReaderFunc1) Read(p []byte) (n int, err error) {
+	return f(p)
+}
+
+//-------------replace method2
+type ReaderFunc2 struct{}
+
+func (f ReaderFunc2) Read() {
+	//	do	Something
 }
