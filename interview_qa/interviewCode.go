@@ -1,4 +1,4 @@
-package interview_qa
+package main
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 
 func main() {
 	//deferCall()
-	//parseStudent()
+	parseStudent()
 	//closePackage()
 	//imp2Interface()
 	//deferFunc()
