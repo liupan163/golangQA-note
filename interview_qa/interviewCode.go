@@ -1,4 +1,4 @@
-package main
+package interview_qa
 
 import (
 	"fmt"

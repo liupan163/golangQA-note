@@ -1,4 +1,4 @@
-package httpInfo
+package http_usage
 
 import (
 	"net/http"

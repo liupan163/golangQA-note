@@ -1,4 +1,4 @@
-package _interface
+package interface_usage
 
 import "fmt"
 

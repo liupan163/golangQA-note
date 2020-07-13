@@ -1,4 +1,4 @@
-package reflectFunc
+package reflect_func
 
 import "reflect"
 
