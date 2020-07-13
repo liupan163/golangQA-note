@@ -1,17 +1,19 @@
 package main
 
 import (
+	"errors"
 	"fmt"
+	"reflect"
 	"runtime"
 	"sync"
-	"errors"
-	"reflect"
 )
 
 func main() {
 	//deferCall()
-	parseStudent()
+	//parseStudent()
 	//closePackage()
+	//mainShowA()
+	chanRandomSelect()
 	//imp2Interface()
 	//deferFunc()
 	//appendSliceFunc()
@@ -77,11 +79,11 @@ func closePackage() {
 type People struct{}
 
 func (p *People) ShowA() {
-	fmt.Println("showA")
+	fmt.Println("People showA")
 	p.ShowB()
 }
 func (p *People) ShowB() {
-	fmt.Println("showB")
+	fmt.Println("People showB")
 }
 
 type Teacher struct {
@@ -89,15 +91,16 @@ type Teacher struct {
 }
 
 func (t *Teacher) ShowA() {
-	fmt.Println("showA")
+	fmt.Println("Teacher showA")
 }
 func mainShowA() {
 	t := Teacher{}
 	t.ShowA()
+	t.ShowB()
 }
 
-//showA
-//showA
+//Teacher showA
+//People showB
 //类自子类没有，往上去找父类方法
 //----------------------------------------------------------
 
@@ -107,10 +110,13 @@ func chanRandomSelect() {
 	string_chain := make(chan string, 1)
 	int_chan <- 1
 	string_chain <- "hello"
+
 	select {
-	case value := <-int_chan:
+	case value, ok := <-int_chan:
+		fmt.Println("ok=", ok)
 		fmt.Println("value=", value)
-	case value := <-string_chain:
+	case value, ok := <-string_chain:
+		fmt.Println("ok=", ok)
 		fmt.Println("value=", value)
 	}
 }

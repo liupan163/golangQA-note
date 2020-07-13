@@ -9,7 +9,7 @@
 
 
 ##  网上面试题分析
-- [面试用法整理](https://github.com/liupan163/golangQA-note/tree/master/interview_qa)
+- [面试用法整理](https://github.com/liupan163/golangQA-note/tree/master/interview_code)
 
 ##  用法分析
 - [rpc 用法整理](https://github.com/liupan163/golangQA-note/tree/master/rpc_usage)
