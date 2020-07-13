@@ -1,6 +1,6 @@
 package _3libSourceCode
 
-
+/*
 //代码声明规则、代码导入规则、程序实体访问权限
 
 
@@ -12,3 +12,4 @@ package _3libSourceCode
 待处理
 go mod  1.11
 vendor模块
+*/

@@ -267,9 +267,22 @@ trigger := func(i uint32, fn func()){
 Q: sync/atomic包中提供了几种原子操作？可操作的数据类型又有那些？
 A: add   CAS(compare and swap) load store swap
 
+atomic.Value是开箱即用的，两个指针方法---Store和Load。
+1、一旦atomic.Value值类型被真正的使用，就不能再被复制了。
+2、向原子值存储的第一个值，决定了他后面唯一能存的类型。
+
+
 //ps:针对unsafe.Pointer类型，该包并未提供原子加法操作的函数。
 
+Q:比较并交换操作与交换操作相比有什么不同？优势在哪？
+A:所谓比较并交换，是指，1把新变值赋给变量，并返回变量的旧值。
+    函数会先判断被操作的当前值，与我们预期的旧值是否相等。如果相等=>并返回true表示交换已经进行。
+                                                          否则，就进行交换操作，返回false
+    atomic.CompareAndSwapUint32(&sum, 100, sum+1)
 
+Q:如果要对原子值和互斥锁进行二选一，你认为最重要的三个决策条件应该是什么？
+A:  原子类可能有ABA问题。
+    若业务对ABA敏感，用锁。
 
 
 17、mutex互斥量
@@ -336,4 +349,43 @@ func main() {
 Q:*sync.Cond类型的值可以被传递吗？那 sync.Cond类型的值呢？
 A:
 
-19、
+19、new和make区别
+
+//new和make  区别用法
+var p *[]int = new([]int)       // allocates slice structure; *p == nil; rarely useful
+var v  []int = make([]int, 100) // the slice v now refers to a new array of 100 ints
+
+// Unnecessarily complex:
+//var p *[]int = new([]int)
+//*p = make([]int, 100, 100)
+
+// Idiomatic:
+v := make([]int, 100)
+
+//new对象 跟 声明的区别
+type SyncedBuffer struct {
+	lock   sync.Mutex
+	buffer bytes.Buffer
+}
+p := new(SyncedBuffer) // type *SyncedBuffer
+var v SyncedBuffer     // type  SyncedBuffer
+
+func NewFile(fd int, name string) *File {
+	if fd < 0 {
+		return nil
+	}
+	f := new(File)
+	f.fd = fd
+	f.name = name
+	f.dirinfo = nil
+	f.nepipe = 0
+	return f
+}
+func NewFile(fd int, name string) *File {
+	if fd < 0 {
+		return nil
+	}
+	f := File{fd, name, nil, 0}
+	return &f
+}
+

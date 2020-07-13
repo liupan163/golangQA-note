@@ -1,6 +1,6 @@
 package _2sourceCode
 
-import "flag"
+/*import "flag"
 
 //go语言标准库中---flag代码包---专门用于接受和解析命令参数。
 
@@ -26,3 +26,4 @@ flag.Usage重新赋值。
 var cmdLine = flag.NewFlagSet("question",flag.ExitOnError)
 替换成cmdLine.Parse(os.Args[1:])
 其中os.Args[1:]指的就是我们给定的那些命令参数。
+*/

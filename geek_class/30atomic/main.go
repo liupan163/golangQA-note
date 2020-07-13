@@ -2,12 +2,12 @@ package _0atomic
 
 
 
-try to add something on v0.1.1
+/*try to add something on v0.1.1
 continue test on v0.1.1
 begin to add s.t. on v0.1.2
 add tag v0.1.3
 continue add sth should be tag v0.1.3 again
-//原子操作
+//原子操作*/
 
 //Q:比较并交换操作与交换操作相比有什么不同？优势在哪？
 //A:所谓比较并交换，是指，把新变值赋给变量，并返回变量的旧值。
