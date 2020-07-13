@@ -389,3 +389,6 @@ func NewFile(fd int, name string) *File {
 	return &f
 }
 
+20、return 和 defer 顺序
+
+21、iota用法

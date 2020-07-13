@@ -13,13 +13,17 @@ func main() {
 	//parseStudent()
 	//closePackage()
 	//mainShowA()
-	chanRandomSelect()
-	//imp2Interface()
+	//chanRandomSelect()
+	//ChainMain()
+	//imp2Interface()   //todo
 	//deferFunc()
 	//appendSliceFunc()
+	//nilCheck()
+	//funcAreaTest()
+	//panicOrderTest()
 	//panicOrderDetailTest()
-	//relectEg()
-	//reflectDemo()
+	//reflectEg()
+	reflectDemo()
 }
 func deferCall() {
 	defer func() { fmt.Println("打印前") }()
@@ -211,7 +215,15 @@ type Human interface {
 
 type Stduent struct{}
 
-func (stu *Stduent) Speak(think string) (talk string) {
+/*func (stu *Stduent) Speak(think string) (talk string) {
+	if think == "bitch" {
+		talk = "You are a good boy"
+	} else {
+		talk = "hi"
+	}
+	return
+}*/
+func (stu Stduent) Speak(think string) (talk string) {
 	if think == "bitch" {
 		talk = "You are a good boy"
 	} else {
@@ -219,10 +231,9 @@ func (stu *Stduent) Speak(think string) (talk string) {
 	}
 	return
 }
-
 func imp2Interface() {
-	//var human Human  = Stduent{}
-	var human = Stduent{}
+	var human Human = Stduent{}
+	//var human = Stduent{}
 	think := "bitch"
 	fmt.Println(human.Speak(think))
 }
@@ -255,19 +266,21 @@ func main2() {
 //----------------------------------------------------------
 
 func ISwitch() {
-	//i := GetValue()
-	//switch i.(type) {
-	//case int:
-	//	println("int")
-	//case string:
-	//	println("string")
-	//case interface{}:
-	//	println("interface")
-	//default:
-	//	println("unknown")
-	//}
+	i := GetValue()
+	switch i.(type) {
+	case int:
+		println("int")
+	case string:
+		println("string")
+	case interface{}:
+		println("interface")
+	default:
+		println("unknown")
+	}
 }
-func GetValue() int {
+
+//func GetValue() int {
+func GetValue() interface{} {
 	return 1
 }
 
@@ -276,9 +289,9 @@ func GetValue() int {
 
 //----------------------------------------------------------//----------------------------------------------------------
 func deferFunc() {
-	//println(DeferFunc1(1))
-	//println(DeferFunc2(1))
-	println(DeferFunc3(1))
+	println(DeferFunc1(1)) //4
+	println(DeferFunc2(1)) //1
+	println(DeferFunc3(1)) // 3
 }
 
 func DeferFunc1(i int) (t int) {
@@ -316,7 +329,7 @@ func appendSliceFunc() {
 	fmt.Println(s1)
 }
 
-//切片的...
+//切片的... 用法
 //----------------------------------------------------------
 
 func nilCheck() {
@@ -331,6 +344,31 @@ func Foo(x interface{}) {
 	}
 }
 
+// 究极解法
+func IsNil(any interface{}) bool {
+	re := false
+	if any != nil {
+		v := reflect.ValueOf(any)
+		if v.Kind() == reflect.Ptr {
+			re = v.IsNil()
+			if !re {
+				for {
+					v2 := v.Elem()
+					if v2.Kind() != reflect.Ptr {
+						break
+					}
+					re = v2.IsNil()
+					if re {
+						break
+					}
+					v = v2
+				}
+			}
+		}
+	}
+	return re
+}
+
 //接口类型为nil判断条件
 //----------------------------------------------------------
 
@@ -342,7 +380,6 @@ func iotaEg() {
 		k
 		p = iota
 	)
-
 }
 func iotaCheck() {
 	fmt.Println("iotaEg=>", iotaEg)
@@ -429,7 +466,7 @@ func panicOrderDetailTest() {
 
 	defer func() {
 		panic(func() string {
-			return "defer panic"
+			return "defer panic."
 		})
 	}()
 	panic("panic")
@@ -437,33 +474,37 @@ func panicOrderDetailTest() {
 
 //recover接受panic函数
 //----------------------------------------------------------
-func relectEg() {
+func reflectEg() {
 	var num float64 = 1.2345
 
 	typeInfo := reflect.TypeOf(num)
 	pointer := reflect.ValueOf(&num)
 	value := reflect.ValueOf(num)
+	fmt.Println("typeInfo:", typeInfo)
+	fmt.Println("pointer:", pointer)
+	fmt.Println("value:", value)
 	changeValue := pointer.Elem()
 	changeValue.SetFloat(1.000)
-	fmt.Println("type of pointer", changeValue.Type())
-	fmt.Println("typeInfo", typeInfo, ",pointer", pointer, ",value", value)
-	fmt.Println("value.Canset", value.CanSet())
+	fmt.Println("changeValue.Type():", changeValue.Type())
+	fmt.Println("typeInfo:", typeInfo, ",pointer:", pointer, ",value:", value)
+	fmt.Println("value.CanSet():", value.CanSet())
 	// 可以理解为“强制转换”，但是需要注意的时候，转换的时候，如果转换的类型不完全符合，则直接panic
 	// Golang 对类型要求非常严格，类型一定要完全符合
 	// 如下两个，一个是*float64，一个是float64，如果弄混，则会panic
 	convertPointer := pointer.Interface().(*float64)
 	convertValue := value.Interface().(float64)
 
-	fmt.Println(convertPointer)
-	fmt.Println(convertValue)
+	fmt.Println("convertPointer:", convertPointer)
+	fmt.Println("convertValue:", convertValue)
 }
 
-// 点：
-// 只有指针类型的才可以.Elem()， .CanSet()和 .setFlocat()
-// realValue := value.Interface().(已知的类型)
-// typeInfo := relect.TypeOf(num)
-// valueInfo := relect.ValueOf(num)
+//  知识点：
+// 	只有指针类型* ,才可以 .Elem()， .CanSet()和 .setFloat()
 //
+// 	realValue := value.Interface().(已知的类型)
+// 		typeInfo := relect.TypeOf(num)
+// 		valueInfo := relect.ValueOf(num)
+
 //----------------------------------------------------------
 
 type ReflectStruct struct {
@@ -494,3 +535,11 @@ func doReflectMethod(demo ReflectStruct) {
 		fmt.Printf("%s: %v\n", m.Name, m.Type)
 	}
 }
+
+/*
+	getType= main.ReflectStruct ,getValue= {1 parker 18}
+	Id: int  = 1
+	Name: string  = parker
+	Age: int  = 18
+	ReflectCallFunc: func(main.ReflectStruct)
+*/
