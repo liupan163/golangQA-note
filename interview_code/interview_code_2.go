@@ -23,7 +23,10 @@ func main() {
 	fmt.Println("tt5 return =", tt5())
 	//fmt.Println("tt6 return =", tt6())
 }
+/*
+注意：如果defer后面只有一条语句，则其中的变量会立刻被赋值；如果defer后面是一个函数，则其中的变量会在执行时才被赋值。
 
+*/
 //return 1,defer tt1 0
 func tt1() int {
 	var i = 0
