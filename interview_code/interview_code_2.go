@@ -15,7 +15,7 @@ defer  延迟的函数参数就已经计算完成了
 2、执行defer语句注意（参数是 值传递，还是引用传递）
 */
 
-func main() {
+func second_main() {
 	//fmt.Println("tt1 return=", tt1())
 	//fmt.Println("tt2 return=", tt2())
 	//fmt.Println("tt3 return=", tt3())
