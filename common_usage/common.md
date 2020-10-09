@@ -203,10 +203,10 @@ A:空结构体不占用空间，但是具有结构体的一切属性。如可以
 
 15、Pointer
 unsafe包里面有一个类型叫做Pointer，通常用来代表指针。  unsafe是类型安全的操作
-- 任何类型的指针都可以被转化为Pointer
-- Pointer可以被转化为任何类型的指针
-- uintptr可以被转化为Pointer
-- Pointer可以被转化为uintptr
+-   任何类型的指针都可以被转化为Pointer
+-   Pointer可以被转化为任何类型的指针
+-   uintptr可以被转化为Pointer
+-   Pointer可以被转化为uintptr
 
 uintptr类型。该类型实际上是一个数值类型，也是go语言内置数据类型之一，也能代表指针
 
@@ -244,6 +244,30 @@ func dd(t *int) {
 	所以不能new("little pig").SetName("monster")
 */
 
+---------------------------------
+-   unsafe.Pointer类型可以和另外两种类型互转
+-   uintptr类型可以做指针运算
+-   指针类型可以方便的取变量值
+
+type MyStruct struct {
+    i int
+    j int
+}
+
+func myFunction(ms *MyStruct) {
+    ptr := unsafe.Pointer(ms)
+    for i := 0; i < 2; i++ {
+        c := (*int)(unsafe.Pointer((uintptr(ptr) + uintptr(8*i))))  //  ptr可转换成uintptr。   uintptr可做运算
+        *c += i + 1               // 指针类型可方便取值                 
+        fmt.Printf("[%p] %d\n", c, *c)
+    }
+}
+
+func main() {
+    a := &MyStruct{i: 40, j: 50}
+    myFunction(a)
+    fmt.Printf("[%p] %v\n", a, a)
+}
 
 16、atomic
 原子操作:在sync/atomic包中，声明了很多相关函数
