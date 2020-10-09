@@ -24,6 +24,11 @@ func main() {
 	//token || ast
 }
 /*
+	t := reflect.TypeOf(q)
+    k := t.Kind()
+    fmt.Println("Type ", t) // Type  main.order
+    fmt.Println("Type.Kind ", k) // Type.Kind  struct
+
 	value := reflect.ValueOf(obj)
 	if value.Kind() == reflect.Ptr || value.Kind() != reflect.Struct{ ... }
 	value.NumField()
@@ -32,6 +37,7 @@ func main() {
 	valueField := value.Field(i)
 	value.Type().AssignableTo(valueField.Type())
 
+	当然通过reflect.Value我们也可以获得reflect.Type。
 	rType := value.Type()
 
 	value.Field(1)    				// Value
@@ -40,4 +46,6 @@ func main() {
 	tagName, ok := typeField.Tag.Lookup(dot.TagDot)
 	if typeField.Type.Kind() != reflect.Ptr && typeField.Type.Kind() != reflect.Interface { ... }
 	typeField.Name
+
+	当修改一个反射reflection时, 其值必须是settable
 */
