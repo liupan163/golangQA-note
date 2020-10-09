@@ -268,6 +268,9 @@ func main() {
     myFunction(a)
     fmt.Printf("[%p] %v\n", a, a)
 }
+基于两点保证:
+1，golang的struct结构体数据在内存中是一整块连续的。
+2，+8是int类型在64位操作系统上占用8字节，同样的类型在不同的操作系统上占用内存空间是不一样的。
 
 16、atomic
 原子操作:在sync/atomic包中，声明了很多相关函数
