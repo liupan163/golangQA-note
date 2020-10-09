@@ -23,3 +23,21 @@ func main() {
 
 	//token || ast
 }
+/*
+	value := reflect.ValueOf(obj)
+	if value.Kind() == reflect.Ptr || value.Kind() != reflect.Struct{ ... }
+	value.NumField()
+	value.IsValid()
+
+	valueField := value.Field(i)
+	value.Type().AssignableTo(valueField.Type())
+
+	rType := value.Type()
+
+	value.Field(1)    				// Value
+	typeField := rType.Field(i)	    // StructField    特别用法
+
+	tagName, ok := typeField.Tag.Lookup(dot.TagDot)
+	if typeField.Type.Kind() != reflect.Ptr && typeField.Type.Kind() != reflect.Interface { ... }
+	typeField.Name
+*/
