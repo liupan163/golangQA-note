@@ -65,6 +65,10 @@ type MyString = string //Type Aliases
 type MyString2 string  //无等号
 
 8、切片
+s=ss[:] 引用一个切片或数组
+s=s[:0] 清空切片
+s=s[:10]s=s[10:]s=s[10:20] 截取接片
+s=ss[0:10:20] 从切片或数组引用指定长度和容量的切片
 
 
 9、容器container、链表container/list、循环链表(环)container/ring
@@ -245,6 +249,7 @@ func dd(t *int) {
 */
 
 ---------------------------------
+https://studygolang.com/articles/28391
 -   unsafe.Pointer类型可以和另外两种类型互转
 -   uintptr类型可以做指针运算
 -   指针类型可以方便的取变量值
